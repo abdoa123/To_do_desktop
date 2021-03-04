@@ -20,6 +20,7 @@ namespace TodoList
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public testEntities db = new testEntities();
         public static Users user = new Users();
         public MainWindow()
