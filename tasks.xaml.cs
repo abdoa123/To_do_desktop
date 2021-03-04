@@ -19,15 +19,26 @@ namespace TodoList
     /// </summary>
     public partial class tasks : Window
     {
+        public string user_Name = "";
         public testEntities db = new testEntities();
         public tasks()
         {
             InitializeComponent();
+            nameText.Text = "HI there  " +MainWindow.user.username;
         }
 
+        void clearData()
+        {
+            dp.Text = "";
+             pr.SelectedItem= null;
+            TName.Text = "";
+            info.Text = "";
+
+        }
 
         private void RadGridView_Loaded(object sender, RoutedEventArgs e)
         {
+            tasksview.ItemsSource = null;
             loadData();
 
         }
@@ -64,6 +75,7 @@ namespace TodoList
                 db.tasks.Add(task);
                 db.SaveChanges();
                 loadData();
+                clearData();
 
             }
         }

@@ -4,7 +4,7 @@
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="TodoList.tasks"
         Title="tasks" Height="650" Width="900">
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\nozom\Documents\visual studio 2013\Projects\TodoList\TodoList\image\finance.jpg" />
+        <ImageBrush ImageSource="C:\Users\nozom\Documents\visual studio 2013\Projects\TodoList\TodoList\image\1.jpg" />
     </Window.Background>
 
     <Grid>
@@ -29,18 +29,23 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+
         </Grid.RowDefinitions>
+
+        <TextBox BorderThickness="0" Name = "nameText" Margin = "93,20,98,0" Background="Transparent" FontSize="26" FontFamily="Arial" FontWeight="Bold" Grid.ColumnSpan="3" />
+
+        <Image Source="C:\Users\nozom\Desktop\1.png" Grid.Row="0"  Grid.RowSpan="2" Margin="0,10,42,42"/>
         <Button x:Name="addButton" Content="add new task" FontWeight="Bold" Click="Button_Click"  FontSize="24" FontFamily="mohammad art 1"  Foreground="White" Background="Black" Grid.RowSpan="2"  Grid.Row="10" Grid.ColumnSpan="2" Margin="93,17,10,23"/>
         <Button x:Name="edit" Content="edit" FontWeight="Bold"  FontSize="24" FontFamily="mohammad art 1"  Foreground="White" Background="#FF09BF00" Click="editButton_Click"  Grid.RowSpan="2"  Grid.Row="10" Grid.Column="3" Margin="29,17,107,23" Grid.ColumnSpan="2" />
-        <telerik:RadGridView  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4"  Name="tasksview" Loaded="RadGridView_Loaded"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Height="195" Width="632" Grid.RowSpan="6">
-            <telerik:RadGridView.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.677"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </telerik:RadGridView.RenderTransform>
+        <telerik:RadGridView  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5"  Name="tasksview" Loaded="RadGridView_Loaded" IsReadOnly="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" FlowDirection="RightToLeft" FontSize="20" FontFamily="mohammad art 1" CanUserResizeRows="False" CanUserDeleteRows="False" AreRowDetailsFrozen="True"  GroupPanelBackground="#FF214C7F" VerticalGridLinesBrush="#FF214C7F" ScrollViewer.VerticalScrollBarVisibility="Visible"    EnableColumnVirtualization="False" Grid.RowSpan="5" Margin="1,36,1,6">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Width="100" DataMemberBinding="{Binding name}" Header="الاسم" HeaderTextAlignment="Center" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn Width="240" DataMemberBinding="{Binding taskname}" Header="المهمة" HeaderTextAlignment="Center" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn Width="240" DataMemberBinding="{Binding inf}" Header="التفاصيل" HeaderTextAlignment="Center" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn Width="240" DataMemberBinding="{Binding date}" Header="التاريخ" HeaderTextAlignment="Center" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn Width="240" DataMemberBinding="{Binding isDone}" Header="اكتملت" HeaderTextAlignment="Center" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn Width="240" DataMemberBinding="{Binding priority}" Header="الاولويه" HeaderTextAlignment="Center" IsReadOnly="True"/>
+            </telerik:RadGridView.Columns>
         </telerik:RadGridView>
         <Label Content="task name " Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Height="49"  Width="144" Foreground="White" Background="Red" Grid.IsSharedSizeScope="True" Margin="0,2,5,1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         <TextBox x:Name="TName" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Black" FontWeight="Bold" FontSize="24" Background="#FFF7F7F7" VerticalAlignment="Center" Height="50"  FlowDirection="RightToLeft" FontFamily="Arial" Grid.Row="6" VerticalContentAlignment="Center" />

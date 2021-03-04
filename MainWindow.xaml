@@ -1,7 +1,10 @@
 ﻿<Window x:Class="TodoList.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Background="#FF1BBAD3" >
+        Title="MainWindow" Height="350" Width="525"  >
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\nozom\Desktop\login-background.jpg" />
+    </Window.Background>
     <Window.Resources>
         <Style
 			x:Key="ButtonFocusVisual">
@@ -75,10 +78,11 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="username" FlowDirection="RightToLeft" HorizontalAlignment="Left" Height="42"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" FontFamily="mohammad art 1" FontSize="14" Grid.Row="1" Grid.Column="1" Margin="75,0,0,0" />
-        <PasswordBox x:Name="password" FlowDirection="RightToLeft" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="170" FontFamily="mohammad art 1" FontSize="14" Height="31" Grid.Row="2" Grid.Column="1" Margin="76,0,0,0"/>
-        <Label Content="اسم المستخدم" Foreground="#FFD0D0D0" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" FontFamily="mohammad art 1" FontSize="14" Grid.Column="3" Grid.Row="1"/>
-        <Label x:Name="pass_label" Content="كلمة السر" Foreground="#FFD0D0D0" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Width="73" FontFamily="mohammad art 1" FontSize="14" Grid.Column="2" Grid.Row="2" Margin="10,0,0,0"/>
+        <TextBox x:Name="username" FlowDirection="RightToLeft" HorizontalAlignment="Left" Height="35"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180" FontFamily="mohammad art 1" FontSize="14" Grid.Row="1" Grid.Column="1" Margin="75,10,0,0" />
+        <PasswordBox x:Name="password" FlowDirection="RightToLeft" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="180" FontFamily="mohammad art 1" FontSize="14" Height="35" Grid.Row="2" Grid.Column="1" Margin="75,6,0,0"/>
+        <Label Content="اسم المستخدم" Foreground="#FFD0D0D0" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" FontFamily="mohammad art 1" FontSize="14" Grid.Column="2" Grid.Row="1" Margin="15,15,0,0"/>
+        <Label x:Name="pass_label" Content="كلمة السر" Foreground="#FFD0D0D0" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Width="73" FontFamily="mohammad art 1" FontSize="14" Grid.Column="2" Grid.Row="2" Margin="15,10,0,0"/>
         <Button x:Name="Enter_btn" Content="دخول" Background="#FF3ACD5B" Style="{DynamicResource MetroButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="mohammad art 1" FontSize="25" HorizontalAlignment="Stretch"  Grid.Row="3" Grid.Column="1" Click="Enter_btn_Click" Margin="75,10,49,0"/>
     </Grid>
+
 </Window>
